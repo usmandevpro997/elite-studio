@@ -1,0 +1,250 @@
+.services {
+  background: var(--canvas);
+  border-bottom: 1px solid var(--paper-faint);
+  padding: 80px 0;
+}
+
+@media (min-width: 768px) {
+  .services {
+    padding: 100px 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .services {
+    padding: 120px 0;
+  }
+}
+
+.services-header {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 48px;
+  max-width: 900px;
+}
+
+@media (min-width: 1024px) {
+  .services-header {
+    gap: 28px;
+    margin-bottom: 72px;
+  }
+}
+
+.services-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.services-eyebrow-line {
+  height: 1px;
+  width: 72px;
+  background: var(--paper-faint);
+  display: inline-block;
+}
+
+.services-title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 6vw, 64px);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  font-weight: 400;
+  color: var(--paper);
+}
+
+.services-title span {
+  font-style: italic;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+}
+
+.services-title span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0.15em;
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.8;
+}
+
+.services-intro {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--paper-muted);
+  max-width: 56ch;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: var(--paper-faint);
+  border: 1px solid var(--paper-faint);
+}
+
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.service-card {
+  background: var(--canvas);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  min-height: 420px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.4s var(--ease-premium);
+  outline: none;
+}
+
+@media (min-width: 1024px) {
+  .service-card {
+    padding: 40px 36px;
+    min-height: 480px;
+  }
+}
+
+.service-card:hover,
+.service-card:focus-visible {
+  background: var(--canvas-soft);
+}
+
+.service-card:focus-visible {
+  box-shadow: inset 0 0 0 1px var(--paper);
+}
+
+.service-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+
+.service-number {
+  font-family: var(--font-display);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  color: var(--paper-muted);
+  border: 1px solid var(--paper-faint);
+  padding: 6px 10px;
+  line-height: 1;
+}
+
+.service-card:hover .service-number {
+  color: var(--paper);
+  border-color: var(--paper);
+}
+
+.service-detail {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--paper-muted);
+}
+
+.service-detail i {
+  width: 28px;
+  height: 1px;
+  background: var(--paper-faint);
+  display: inline-block;
+  transition: all 0.4s var(--ease-premium);
+}
+
+.service-card:hover .service-detail i {
+  width: 48px;
+  background: var(--accent);
+}
+
+.service-title {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 32px);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--paper);
+  margin-bottom: 16px;
+}
+
+.service-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--paper-muted);
+  margin-bottom: 32px;
+  max-width: 32ch;
+}
+
+.service-capabilities {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.service-capabilities li {
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--paper-muted);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.4;
+}
+
+.service-capabilities li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 1px solid var(--paper-faint);
+}
+
+.service-card:hover .service-capabilities li {
+  color: var(--paper);
+}
+
+.service-card:hover .service-capabilities li::before {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.service-hover-line {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s var(--ease-premium);
+}
+
+.service-card:hover .service-hover-line,
+.service-card:focus-visible .service-hover-line {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card,
+  .service-detail i,
+  .service-hover-line {
+    transition: none;
+  }
+  .service-hover-line {
+    transform: scaleX(1);
+    opacity: 0;
+  }
+  .service-card:hover .service-hover-line {
+    opacity: 1;
+  }
+}

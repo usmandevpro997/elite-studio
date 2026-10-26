@@ -1,0 +1,367 @@
+.hero {
+  position: relative;
+  background: var(--canvas);
+  border-bottom: 1px solid var(--paper-faint);
+  overflow: hidden;
+  padding: 32px 0 0;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 40px 0 0;
+  }
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 40px;
+    min-height: calc(100vh - var(--header-h) - 1px);
+    padding-top: 20px;
+    padding-bottom: 60px;
+  }
+}
+
+.hero-content {
+  padding: 24px 0 32px;
+}
+
+@media (min-width: 1024px) {
+  .hero-content {
+    padding: 0;
+  }
+}
+
+.hero-eyebrow {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+  .hero-eyebrow {
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+  }
+}
+
+.hero-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--paper-muted);
+  border: 1px solid var(--paper-faint);
+  padding: 6px 12px;
+  width: fit-content;
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255, 77, 18, 0.15);
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 9vw, 88px);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  font-weight: 400;
+  color: var(--paper);
+  margin-bottom: 24px;
+}
+
+.hero-title-accent {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--paper);
+  position: relative;
+  display: inline-block;
+}
+
+.hero-title-accent::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0.1em;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+}
+
+.hero-copy {
+  font-size: clamp(16px, 2.2vw, 18px);
+  line-height: 1.6;
+  color: var(--paper-muted);
+  max-width: 48ch;
+  margin-bottom: 32px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+@media (min-width: 480px) {
+  .hero-actions {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+}
+
+.hero-btn-primary {
+  height: 52px;
+  padding: 0 28px;
+  font-size: 15px;
+  background: var(--paper);
+  color: var(--canvas);
+}
+
+.hero-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 52px;
+  padding: 0 24px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border: 1px solid var(--paper-faint);
+  color: var(--paper);
+  transition: all 0.3s var(--ease-premium);
+}
+
+.hero-btn-secondary:hover {
+  border-color: var(--paper);
+  background: rgba(246, 243, 238, 0.06);
+}
+
+.hero-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  border-top: 1px solid var(--paper-faint);
+  padding-top: 24px;
+}
+
+.hero-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hero-meta-item strong {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--paper);
+}
+
+.hero-meta-item span {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  color: var(--paper-muted);
+}
+
+.hero-visual-wrap {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 20px 0 48px;
+}
+
+@media (min-width: 1024px) {
+  .hero-visual-wrap {
+    padding: 0;
+    height: 100%;
+  }
+}
+
+.hero-visual {
+  position: relative;
+  width: min(100%, 440px);
+  aspect-ratio: 4 / 5;
+  background: var(--canvas-soft);
+  border: 1px solid var(--paper-faint);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.geo-frame {
+  position: absolute;
+  inset: -14px;
+  border: 1px solid var(--accent);
+  transform: rotate(-3deg);
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.geo-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+
+.geo-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.geo-dots i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid var(--paper-faint);
+  display: block;
+}
+
+.geo-dots i:nth-child(2) {
+  background: var(--paper-faint);
+}
+
+.geo-label {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--paper-muted);
+}
+
+.geo-circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 1px solid var(--paper);
+  margin: 10px 0 32px;
+  position: relative;
+}
+
+.geo-circle::after {
+  content: '';
+  position: absolute;
+  inset: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.geo-line {
+  height: 1px;
+  background: var(--paper);
+  width: 100%;
+  margin-bottom: 12px;
+  opacity: 0.8;
+}
+
+.geo-line-short {
+  width: 62%;
+  opacity: 0.4;
+}
+
+.geo-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.geo-bar {
+  width: 40%;
+  height: 32px;
+  border: 1px solid var(--paper-faint);
+  position: relative;
+}
+
+.geo-bar::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+  background: var(--paper-faint);
+}
+
+.geo-orange-block {
+  width: 56px;
+  height: 56px;
+  background: var(--accent);
+}
+
+.geo-badge {
+  position: absolute;
+  right: -12px;
+  bottom: 28px;
+  background: var(--paper);
+  color: var(--canvas);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 8px 12px;
+  transform: rotate(2deg);
+}
+
+.hero-bottom-border {
+  display: none;
+}
+
+/* Entrance Animations */
+.hero-eyebrow,
+.hero-title,
+.hero-copy,
+.hero-actions,
+.hero-meta,
+.hero-visual-wrap {
+  animation: heroFadeUp 0.8s var(--ease-premium) both;
+}
+
+.hero-eyebrow { animation-delay: 0.05s; }
+.hero-title { animation-delay: 0.15s; }
+.hero-copy { animation-delay: 0.25s; }
+.hero-actions { animation-delay: 0.35s; }
+.hero-meta { animation-delay: 0.45s; }
+.hero-visual-wrap { animation-delay: 0.3s; }
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-eyebrow,
+  .hero-title,
+  .hero-copy,
+  .hero-actions,
+  .hero-meta,
+  .hero-visual-wrap {
+    animation: none;
+  }
+  .geo-frame {
+    transform: none;
+  }
+}
